@@ -56,8 +56,12 @@ Optional:
 <a id="nestedblock--update"></a>
 ### Nested Schema for `update`
 
+Required:
+
+- `statements` (String) A string containing one or many SnowSQL statements separated by semicolons.
+
 Optional:
 
-- `create_in_place` (Boolean) Specifies if the create statements are idempotent and can be run again safely without requiring a delete first.
+- `number_of_statements` (Number) Specifies the number of SnowSQL statements. Defaults to `-1` which will dynamically count the number semicolons in SnowSQL statements. Go [here](https://godoc.org/github.com/snowflakedb/gosnowflake#hdr-Executing_Multiple_Statements_in_One_Call) to learn more about preventing SQL injection attacks.
 
 
